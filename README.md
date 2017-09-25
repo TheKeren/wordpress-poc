@@ -6,7 +6,7 @@ It will create a VPC (and all associate networking components), Mysql RDS instan
 
 Scaling
 --------
-I chose Elastic Beanstalk because it is rasy to scale, you have the option of both increasing the instance size (since it's a t2.micro right now) and adding more web app servers to share the load. 
+I chose Elastic Beanstalk because it is easy to scale, you have the option of both increasing the instance size (since it's a t2.micro right now) and adding more web app servers to share the load. 
  Right now the autoscaling group is set to 2 Min&Max but it's easy to change with terraform, you can also add cloudwatch monitoring and use preformance and networking tresholds to automatically change the number of running instances.
 The database can also be scaled up and it's also possible to create a cluster with several slaves that will also serve read requests.
 Another thing that can be done to improve performance is adding a caching layer (like varnish) or an external CDN provider, which will reduce the number of queries that hit the website.
